@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary-emerald: #0A3226;
+  --emerald-deep: #06231A;
+  --emerald-light: #124837;
+  --emerald-accent: #1C6851;
+  --gold-accent: #D4AF37;
+  --gold-warm: #E2BF4E;
+  --gold-hover: #C5A028;
+  --gold-soft: #FBF6E9;
+  --gold-border: rgba(212, 175, 55, 0.45);
+  --terracotta: #C85A54;
+  --bg-ivory: #FBF9F5;
+  --bg-cream: #F5EFEB;
+  --surface-white: #FFFFFF;
+  --text-main: #1A2421;
+  --text-muted: #53635D;
+  --text-light: #879891;
+  --border-light: #E7ECE9;
+  --border-gold: rgba(212, 175, 55, 0.4);
+  --shadow-sm: 0 2px 10px rgba(10, 50, 38, 0.04);
+  --shadow-md: 0 8px 26px rgba(10, 50, 38, 0.08);
+  --shadow-lg: 0 18px 45px rgba(10, 50, 38, 0.12);
+  --shadow-gold: 0 8px 28px rgba(212, 175, 55, 0.28);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-full: 9999px;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-editorial: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-ivory);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-ivory);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--emerald-accent);
+  border-radius: 4px;
+}
+
+/* Typography Helpers */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-editorial {
+  font-family: var(--font-editorial);
+}
+
+.text-gold {
+  color: var(--gold-accent);
+}
+
+.text-emerald {
+  color: var(--primary-emerald);
+}
+
+/* Buttons */
+.btn-gold {
+  background: linear-gradient(135deg, #E2BF4E 0%, #C5A028 100%);
+  color: #0A3226;
+  font-weight: 700;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-gold);
+  font-family: var(--font-sans);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(212, 175, 55, 0.4);
+  filter: brightness(1.03);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.btn-emerald {
+  background: var(--primary-emerald);
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--emerald-accent);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: var(--font-sans);
+}
+
+.btn-emerald:hover {
+  background: var(--emerald-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(10, 50, 38, 0.2);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary-emerald);
+  border: 1.5px solid var(--primary-emerald);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: var(--font-sans);
+}
+
+.btn-outline:hover {
+  background: rgba(10, 50, 38, 0.06);
+  border-color: var(--emerald-accent);
+  transform: translateY(-1px);
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gold-glow-border {
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.16);
+}
+
+/* Modal Overlay & Positioning */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 35, 27, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+  overflow-y: auto;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.modal-content {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 620px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border-gold);
+  position: relative;
+  margin: 0 auto;
+  animation: modalScaleUp 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalScaleUp {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Badges */
+.badge-status {
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.badge-accepted {
+  background: #E0F2FE;
+  color: #0369A1;
+}
+
+.badge-stitching {
+  background: #FEF3C7;
+  color: #B45309;
+}
+
+.badge-quality {
+  background: #F3E8FF;
+  color: #6B21A8;
+}
+
+.badge-delivered {
+  background: #DCFCE7;
+  color: #15803D;
+}
+
+/* Toast Notification Floating Host */
+.darzi-toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  pointer-events: none;
+}
+
+.darzi-toast {
+  pointer-events: auto;
+  background: #FFFFFF;
+  color: var(--text-main);
+  padding: 0.9rem 1.3rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 12px 35px rgba(10, 50, 38, 0.18);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  max-width: 380px;
+  animation: toastSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes toastSlideIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}

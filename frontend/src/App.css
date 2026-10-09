@@ -1,0 +1,80 @@
+/* Darzi Craft & Bespoke Styling Extensions */
+
+/* Animations */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); }
+  50% { box-shadow: 0 0 25px rgba(212, 175, 55, 0.45); }
+}
+
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes tapeSlide {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 0; }
+}
+
+.animate-float {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slideUpFade 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.gold-pulse-glow {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+/* Tape Measure Decorative Strip */
+.tape-measure-strip {
+  height: 8px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--gold-accent),
+    var(--gold-accent) 2px,
+    transparent 2px,
+    transparent 8px,
+    var(--gold-accent) 8px,
+    var(--gold-accent) 10px,
+    transparent 10px,
+    transparent 16px
+  );
+  opacity: 0.7;
+}
+
+/* Tactile Fabric Texture subtle overlay */
+.fabric-texture-bg {
+  background-color: var(--bg-ivory);
+  background-image: radial-gradient(rgba(15, 56, 44, 0.03) 1px, transparent 0);
+  background-size: 16px 16px;
+}
+
+/* Interactive Card Hover Reactions */
+.interactive-craft-card {
+  transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+}
+
+.interactive-craft-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(15, 56, 44, 0.1);
+  border-color: rgba(212, 175, 55, 0.45) !important;
+}
+
+/* Responsive Grid Utilities */
+@media (max-width: 768px) {
+  .hero-headline {
+    font-size: 2.2rem !important;
+  }
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
